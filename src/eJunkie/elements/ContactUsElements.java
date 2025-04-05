@@ -1,4 +1,4 @@
-package java.elements;
+package eJunkie.elements;
 
 public class ContactUsElements {
 }

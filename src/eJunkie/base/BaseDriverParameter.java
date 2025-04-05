@@ -1,13 +1,12 @@
-package java.base;
+package eJunkie.base;
+
 import Utility.MyFunc;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
+import org.testng.annotations.*;
 import java.time.Duration;
 
 public class BaseDriverParameter {
@@ -15,9 +14,12 @@ public class BaseDriverParameter {
     public WebDriverWait wait;
 
     @BeforeClass
-    @Parameters("BrowserTipi")
-    public void Setup(String browserTipi) {
-        switch (browserTipi.toLowerCase()) {
+    @Parameters("BrowserType")
+    public void Setup(String browserType) {
+        CloseFaultyWindows();
+        CloseFaultyForMac();
+
+        switch (browserType.toLowerCase()) {
             case "firefox":
                 driver = new FirefoxDriver();
                 break;
@@ -27,6 +29,7 @@ public class BaseDriverParameter {
             default:
                 driver = new ChromeDriver();
         }
+        driver.get("http://opencart.abstracta.us/index.php?route=account/login");
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
@@ -39,12 +42,19 @@ public class BaseDriverParameter {
         driver.quit();
     }
 
-    public static void CloseFaultyForMac() {
+    public void CloseFaultyForMac() {
         try {
             Process process = Runtime.getRuntime().exec(new String[]{"/bin/bash", "-c", "pgrep -P $(pgrep chromedriver) | xargs kill -9"});
             process.waitFor();
             process = Runtime.getRuntime().exec(new String[]{"/bin/bash", "-c", "pgrep chromedriver | xargs kill -9"});
             process.waitFor();
+        } catch (Exception ignored) {
+        }
+    }
+
+    public void CloseFaultyWindows() {
+        try {
+            Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe /T");
         } catch (Exception ignored) {
         }
     }

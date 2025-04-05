@@ -1,4 +1,4 @@
-package java.methods;
+package eJunkie.methods;
 
 public class ContactUsMethods {
 }
