@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+
+<suite name="mySuite" parallel="tests" thread-count="2"><!--parallel test browser icin -->
+    <test name="myTest1">
+        <parameter name="BrowserType" value="edge"></parameter>
+        <classes>
+            <class name="java.test.ContactUsTest"></class><!-- Buraya class ismi gelecek -->
+        </classes>
+    </test>
+    <test name="myTest2">
+        <parameter name="BrowserType" value="chrome"></parameter>
+        <classes>
+            <class name="java.test.ContactUsTest"></class> <!-- Buraya class ismi gelecek -->
+        </classes>
+    </test>
+</suite>
