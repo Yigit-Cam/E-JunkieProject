@@ -6,13 +6,13 @@
     <test name="E-Junkie Test">
         <parameter name="BrowserType" value="edge"></parameter>
         <classes>
-            <class name="gun04_01042025._06_ToDo"></class>
+            <class name="eJunkie.test.ContactUsTest"></class>
         </classes>
     </test>
     <test name="myTest2">
         <parameter name="BrowserType" value="chrome"></parameter>
         <classes>
-            <class name="gun04_01042025._06_ToDo"></class>
+            <class name="eJunkie.test.ContactUsTest"></class>
         </classes>
     </test>
 </suite>
