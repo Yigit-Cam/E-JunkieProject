@@ -29,7 +29,7 @@ public class BaseDriverParameter {
             default:
                 driver = new ChromeDriver();
         }
-        driver.get("http://opencart.abstracta.us/index.php?route=account/login");
+        driver.get("https://shopdemo.fatfreeshop.com/");
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
