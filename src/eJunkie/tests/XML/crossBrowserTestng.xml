@@ -3,16 +3,16 @@
 
 
 <suite name="E-Junkie Test Suite"> <!--Cross browser icin -->
-    <test name="E-Junkie Test">
+    <test name="ContactUsTestEdge">
         <parameter name="BrowserType" value="edge"></parameter>
         <classes>
-            <class name="eJunkie.test.ContactUsTest"></class>
+            <class name="eJunkie.tests.ContactUsTest"></class>
         </classes>
     </test>
-    <test name="myTest2">
+    <test name="ContactUsTestChrome">
         <parameter name="BrowserType" value="chrome"></parameter>
         <classes>
-            <class name="eJunkie.test.ContactUsTest"></class>
+            <class name="eJunkie.tests.ContactUsTest"></class>
         </classes>
     </test>
 </suite>

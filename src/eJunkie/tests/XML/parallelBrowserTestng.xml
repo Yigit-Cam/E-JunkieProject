@@ -3,16 +3,16 @@
 
 
 <suite name="E-Junkie Test Suite" parallel="tests" thread-count="2"><!--parallel test browser icin -->
-    <test name="E-Junkie Test">
+    <test name="ContactUsTestEdge">
         <parameter name="BrowserType" value="edge"></parameter>
         <classes>
-            <class name="eJunkie.test.ContactUsTest"></class><!-- Buraya class ismi gelecek -->
+            <class name="eJunkie.tests.ContactUsTest"></class><!-- Buraya class ismi gelecek -->
         </classes>
     </test>
-    <test name="myTest2">
+    <test name="ContactUsTestChrome">
         <parameter name="BrowserType" value="chrome"></parameter>
         <classes>
-            <class name="eJunkie.test.ContactUsTest"></class> <!-- Buraya class ismi gelecek -->
+            <class name="eJunkie.tests.ContactUsTest"></class> <!-- Buraya class ismi gelecek -->
         </classes>
     </test>
 </suite>

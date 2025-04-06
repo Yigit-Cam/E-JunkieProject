@@ -5,24 +5,23 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 import java.time.Duration;
 
 public class BaseDriverParameter {
     public WebDriver driver;
+    public Actions action;
     public WebDriverWait wait;
 
     @BeforeClass
     @Parameters("BrowserType")
-    public void Setup(String browserType) {
+    public void Setup(String browserType){
         CloseFaultyWindows();
         CloseFaultyForMac();
 
         switch (browserType.toLowerCase()) {
-            case "firefox":
-                driver = new FirefoxDriver();
-                break;
             case "edge":
                 driver = new EdgeDriver();
                 break;
@@ -34,11 +33,12 @@ public class BaseDriverParameter {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        action = new Actions(driver);
     }
 
     @AfterClass
     public void TearDown() {
-        MyFunc.Sleep(3);
+        MyFunc.Sleep(5);
         driver.quit();
     }
 
