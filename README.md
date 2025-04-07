@@ -67,40 +67,60 @@ EJunkieProject/
 
 ✅ Expected: "Invalid promo code" warning message is displayed after clicking “Apply.”
 
+✅ Actual:
+
 ### **2️⃣ US_302 - Payment attempt with missing information**
 📌 As a customer, I want to attempt payment without entering required fields like email or billing name, so I can confirm that the form validations are triggered.
 
 ✅ Expected: "Invalid email" and "Invalid billing name" error messages are displayed.
+
+✅ Actual:
 
 ### **3️⃣ US_303 - Invalid card number payment attempt**
 📌 As a customer, I want to enter a fake card number during payment so I can verify that the system blocks invalid card details.
 
 ✅ Expected: "Your card number is invalid" warning appears.
 
+✅ Actual:
+
 ### **4️⃣ US_304 - Successful payment with valid card**
 📌 As a customer, I want to complete the payment with valid card details so I can receive confirmation of a successful purchase.
 
 ✅ Expected: "Your order has been confirmed. Thank you!" is displayed.
+
+✅ Actual:
 
 ### **5️⃣ US_305 - Can user download the eBook?**
 📌 As a customer, I want to be able to download the eBook immediately after a successful purchase.
 
 ✅ Expected: File download starts and matches the purchased content.
 
+✅ Actual:
+
 ### **6️⃣ US_306 - Submit contact form**
 📌 As a customer, I want to send a message through the contact form to get support, and if CAPTCHA is not verified, I should be warned.
 
 ✅ Expected: "Recaptcha did not match" error message appears.
+
+✅ Actual: "Recaptcha did not match" error message appeared.
+
+<img src="tests_gif/US306_EJunkieContactUs.gif" alt="US306_EJunkie_ContactUs" width="800" height="500"/>
 
 ### **7️⃣ US_307 - Access main e-junkie page**
 📌 As a customer, I want to navigate from the demo site to the official e-junkie homepage to verify the redirection works correctly.
 
 ✅ Expected: Final URL matches e-junkie.com.
 
+✅ Actual: Final URL matched e-junkie.com.
+
+<img src="tests_gif/US307_EJunkieLogo.gif" alt="US307_EJunkie_Logo.gif" width="800" height="500"/>
+
 ### **8️⃣ US_308 - Access promotional video**
 📌 As a customer, I want to play the promotional video and ensure it starts, plays for 10 seconds, and closes properly.
 
 ✅ Expected: Video plays and closes after 10 seconds.
+
+✅ Actual:
 
 ---
 
