@@ -92,10 +92,19 @@ EJunkieProject/
 
 ✅ Expected: "Recaptcha did not match" error message appears.
 
+✅ Actual: "Recaptcha did not match" error message appeared.
+
+<img src="tests_gif/US306_EJunkie_ContactUs.gif" alt="US306_EJunkie_ContactUs" width="800" height="500"/>
+
+
 ### **7️⃣ US_307 - Access main e-junkie page**
 📌 As a customer, I want to navigate from the demo site to the official e-junkie homepage to verify the redirection works correctly.
 
 ✅ Expected: Final URL matches e-junkie.com.
+
+✅ Actual: Final URL matched e-junkie.com.
+
+<img src="tests_gif/US307_EJunkie_Logo.gif" alt="US307_EJunkie_Logo.gif" width="800" height="500"/>
 
 ### **8️⃣ US_308 - Access promotional video**
 📌 As a customer, I want to play the promotional video and ensure it starts, plays for 10 seconds, and closes properly.
