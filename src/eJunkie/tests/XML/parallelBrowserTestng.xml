@@ -15,4 +15,5 @@
             <class name="eJunkie.tests.ContactUsTest"></class> <!-- Buraya class ismi gelecek -->
         </classes>
     </test>
+
 </suite>

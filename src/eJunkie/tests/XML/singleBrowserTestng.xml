@@ -9,4 +9,5 @@
             <class name="eJunkie.tests.ContactUsTest"></class>
         </classes>
     </test>
+
 </suite>
