@@ -6,9 +6,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class ContactUsElements {
+
     public ContactUsElements(WebDriver driver) {
         PageFactory .initElements(driver, this);
     }
+
     @FindBy(xpath = "//*[normalize-space(text())='Contact Us']")
     public WebElement contactUsButton;
 

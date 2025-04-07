@@ -4,7 +4,6 @@ import Utility.MyFunc;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
@@ -28,8 +27,9 @@ public class BaseDriverParameter {
             default:
                 driver = new ChromeDriver();
         }
-        driver.get("https://shopdemo.fatfreeshop.com/");
+
         driver.manage().window().maximize();
+        driver.get("https://shopdemo.fatfreeshop.com/");
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));

@@ -1,8 +1,6 @@
 package eJunkie.methods;
 
 import eJunkie.elements.ContactUsElements;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -45,16 +43,10 @@ public class ContactUsMethods {
         wait.until(ExpectedConditions.visibilityOf(contactUsElements.messageInput)).sendKeys(message);
         wait.until(ExpectedConditions.elementToBeClickable(contactUsElements.sendMessageButton)).click();
 
-        try {
-            wait.until(ExpectedConditions.alertIsPresent());
-            String alertText = driver.switchTo().alert().getText();
-            System.out.println("Alert text: " + alertText);
-            driver.switchTo().alert().accept();
-        } catch (NoAlertPresentException e) {
-            System.out.println("No alert was present.");
-        } catch (UnhandledAlertException e) {
-            System.out.println("Unhandled alert: " + e.getAlertText());
-            driver.switchTo().alert().dismiss(); // veya .accept();
-        }
+        wait.until(ExpectedConditions.alertIsPresent());
+        String alertText = driver.switchTo().alert().getText();
+        System.out.println("Alert text: " + alertText);
+        driver.switchTo().alert().accept();
+
     }
 }
