@@ -1,12 +1,13 @@
 package eJunkie.elements;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class InformationVideoElements {
+public class TC_308_InformationVideoElements {
 
-    public InformationVideoElements(WebDriver driver) {
+    public TC_308_InformationVideoElements(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
