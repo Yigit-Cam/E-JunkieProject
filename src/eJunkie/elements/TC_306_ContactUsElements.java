@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ContactUsElements {
+public class TC_306_ContactUsElements {
 
-    public ContactUsElements(WebDriver driver) {
+    public TC_306_ContactUsElements(WebDriver driver) {
         PageFactory .initElements(driver, this);
     }
 
