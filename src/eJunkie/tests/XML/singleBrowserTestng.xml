@@ -4,9 +4,9 @@
 
 <suite name="E-Junkie Test Suite">
     <test name="ContactUsTest">
-        <parameter name="BrowserType" value="chrome"></parameter>
+        <parameter name="BrowserType" value="chrome"/>
         <classes>
-            <class name="eJunkie.tests.ContactUsTest"></class>
+            <class name="eJunkie.tests.TC_306_ContactUsTest"/>
         </classes>
     </test>
 
