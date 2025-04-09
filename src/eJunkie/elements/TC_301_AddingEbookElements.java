@@ -12,8 +12,8 @@ public class TC_301_AddingEbookElements {
 
     @FindBy(xpath = "(//*[text()=' Add To Cart'])[2]")
     public WebElement eBook;
-    @FindBy(xpath = "(//iframe[@class='EJIframeV3 EJOverlayV3']")
-    public WebElement procedIframe;
+    @FindBy(xpath = "//iframe[@class='EJIframeV3 EJOverlayV3']")
+    public WebElement yourCardIframe;
     @FindBy(xpath = "//*[text()='Proceed To Pay']")
     public WebElement meesage;
     @FindBy(xpath = "//*[text()='Add Promo Code']")
