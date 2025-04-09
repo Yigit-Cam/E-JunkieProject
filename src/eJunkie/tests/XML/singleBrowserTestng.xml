@@ -6,7 +6,7 @@
     <test name="ContactUsTest">
         <parameter name="BrowserType" value="chrome"/>
         <classes>
-            <class name="eJunkie.tests.TC_306_ContactUsTest"/>
+            <class name="eJunkie.tests.TC_304_PaymentCCTest"/>
         </classes>
     </test>
 

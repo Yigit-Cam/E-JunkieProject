@@ -6,13 +6,13 @@
     <test name="ContactUsTestEdge">
         <parameter name="BrowserType" value="edge"/>
         <classes>
-            <class name="eJunkie.tests.TC_306_ContactUsTest"/><!-- Buraya class ismi gelecek -->
+            <class name="eJunkie.tests.TC_304_PaymentCCTest"/><!-- Buraya class ismi gelecek -->
         </classes>
     </test>
     <test name="ContactUsTestChrome">
         <parameter name="BrowserType" value="chrome"/>
         <classes>
-            <class name="eJunkie.tests.TC_306_ContactUsTest"/> <!-- Buraya class ismi gelecek -->
+            <class name="eJunkie.tests.TC_304_PaymentCCTest"/> <!-- Buraya class ismi gelecek -->
         </classes>
     </test>
 

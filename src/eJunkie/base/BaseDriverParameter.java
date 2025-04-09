@@ -31,8 +31,8 @@ public class BaseDriverParameter {
         driver.manage().window().maximize();
         driver.get("https://shopdemo.fatfreeshop.com/");
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(60));
         action = new Actions(driver);
     }
 
