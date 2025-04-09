@@ -1,11 +1,10 @@
 package eJunkie.methods;
 
 import eJunkie.elements.TC_304_PaymentCCElements;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 public class TC_304_PaymentCCMethods {
@@ -54,7 +53,7 @@ public class TC_304_PaymentCCMethods {
         elements.payButton.click();
 
         driver.switchTo().defaultContent();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//p[@class='confirme_text']")));
+        wait.until(ExpectedConditions.visibilityOf(elements.confirmeText));
         Assert.assertEquals(elements.confirmeText.getText(), "RFT, your order is confirmed. Thank you!");
     }
 }
