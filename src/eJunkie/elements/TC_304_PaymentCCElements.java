@@ -2,8 +2,8 @@ package eJunkie.elements;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.FindBy;
 
 public class TC_304_PaymentCCElements {
     public TC_304_PaymentCCElements(WebDriver driver) {
