@@ -28,7 +28,7 @@ public class TC_304_PaymentCCElements {
     @FindBy(id = "label")
     public WebElement humanField;
 
-    @FindBy(xpath = "//img[@alt='Onay işareti']")
+    @FindBy(xpath = "//div[@class='check']/img")
     public WebElement humanFieldCheck;
 
     @FindBy(xpath = "//input[@placeholder='Email']")
