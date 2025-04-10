@@ -25,9 +25,10 @@ public class TC_304_PaymentCCMethods {
         String email = "rfttest123@test.com";
         String creditCardNum = "4242424242424242";
         String expirationDate = "1225";
-        String CVC = "000";
+        String cvc = "000";
 
-        elements.demoeBook.click();
+        wait.until(ExpectedConditions.visibilityOf(elements.demoEbook));
+        elements.demoEbook.click();
 
         driver.switchTo().frame(elements.yourCardIframe);
 
@@ -44,16 +45,16 @@ public class TC_304_PaymentCCMethods {
         elements.nameOnCardField.sendKeys(name);
 
         driver.switchTo().frame(elements.cardIframe);
-        elements.cardnumberField.sendKeys(creditCardNum);
+        elements.cardNumberField.sendKeys(creditCardNum);
         elements.expDateField.sendKeys(expirationDate);
-        elements.cvcField.sendKeys(CVC);
+        elements.cvcField.sendKeys(cvc);
 
         driver.switchTo().defaultContent();
         driver.switchTo().frame(elements.yourCardIframe);
         elements.payButton.click();
 
         driver.switchTo().defaultContent();
-        wait.until(ExpectedConditions.visibilityOf(elements.confirmeText));
-        Assert.assertEquals(elements.confirmeText.getText(), "RFT, your order is confirmed. Thank you!");
+        wait.until(ExpectedConditions.visibilityOf(elements.confirmText));
+        Assert.assertEquals(elements.confirmText.getText(), "RFT, your order is confirmed. Thank you!");
     }
 }

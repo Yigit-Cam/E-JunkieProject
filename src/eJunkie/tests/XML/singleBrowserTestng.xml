@@ -2,12 +2,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 
-<suite name="E-Junkie Test Suite">
-    <test name="ContactUsTest">
+<suite name="EJunkieTestSuite" parallel="false">
+    <test name="ChromeOnlyTests">
         <parameter name="BrowserType" value="chrome"/>
         <classes>
             <class name="eJunkie.tests.TC_301_AddingEbookTest"/>
+            <class name="eJunkie.tests.TC_304_PaymentCCTest"/>
+            <class name="eJunkie.tests.TC_306_ContactUsTest"/>
+            <class name="eJunkie.tests.TC_307_AccessToEJunkieHomePageTest"/>
+            <class name="eJunkie.tests.TC_308_InformationVideoTest"/>
         </classes>
     </test>
-
 </suite>

@@ -15,16 +15,16 @@ public class TC_306_ContactUsElements {
     public WebElement contactUsButton;
 
     @FindBy(xpath = "//input[@id='sender_name']")
-    public WebElement nameInput;
+    public WebElement nameField;
 
     @FindBy(xpath = "//input[@id='sender_email']")
-    public WebElement emailInput;
+    public WebElement emailField;
 
     @FindBy(xpath = "//input[@id='sender_subject']")
-    public WebElement subjectInput;
+    public WebElement subjectField;
 
     @FindBy(xpath = "//textarea[@id='sender_message']")
-    public WebElement messageInput;
+    public WebElement messageField;
 
     @FindBy(xpath = "//button[@id='send_message_button']")
     public WebElement sendMessageButton;

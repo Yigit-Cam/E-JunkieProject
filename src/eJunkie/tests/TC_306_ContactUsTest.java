@@ -5,6 +5,7 @@ import org.testng.annotations.*;
 import eJunkie.base.BaseDriverParameter;
 
 public class TC_306_ContactUsTest extends BaseDriverParameter {
+
     @Test()
     @Parameters("BrowserType")
     public void ContactUsTest(){

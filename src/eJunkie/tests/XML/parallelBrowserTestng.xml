@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-
-<suite name="E-Junkie Test Suite" parallel="tests" thread-count="2"><!--parallel test browser icin -->
-    <test name="ContactUsTestEdge">
-        <parameter name="BrowserType" value="edge"/>
-        <classes>
-            <class name="eJunkie.tests.TC_304_PaymentCCTest"/><!-- Buraya class ismi gelecek -->
-        </classes>
-    </test>
-    <test name="ContactUsTestChrome">
+<suite name="ParallelChromeSuite" parallel="classes" thread-count="5">
+    <test name="ChromeParallelTests">
         <parameter name="BrowserType" value="chrome"/>
         <classes>
-            <class name="eJunkie.tests.TC_304_PaymentCCTest"/> <!-- Buraya class ismi gelecek -->
+            <class name="eJunkie.tests.TC_301_AddingEbookTest"/>
+            <class name="eJunkie.tests.TC_304_PaymentCCTest"/>
+            <class name="eJunkie.tests.TC_306_ContactUsTest"/>
+            <class name="eJunkie.tests.TC_307_AccessToEJunkieHomePageTest"/>
+            <class name="eJunkie.tests.TC_308_InformationVideoTest"/>
         </classes>
     </test>
-
 </suite>

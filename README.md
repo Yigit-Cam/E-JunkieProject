@@ -67,35 +67,35 @@ EJunkieProject/
 
 ✅ Expected: "Invalid promo code" warning message is displayed after clicking “Apply.”
 
-✅ Actual:
+✅ Actual: After adding the eBook to the basket and entering an invalid promo code, the system displayed the warning message "Invalid promo code" upon clicking “Apply.”
 
 ### **2️⃣ US_302 - Payment attempt with missing information**
 📌 As a customer, I want to attempt payment without entering required fields like email or billing name, so I can confirm that the form validations are triggered.
 
 ✅ Expected: "Invalid email" and "Invalid billing name" error messages are displayed.
 
-✅ Actual:
+✅ Actual: When the required fields like email and billing name were left empty, the system triggered the form validations and displayed the error messages "Invalid email" and "Invalid billing name."
 
 ### **3️⃣ US_303 - Invalid card number payment attempt**
 📌 As a customer, I want to enter a fake card number during payment so I can verify that the system blocks invalid card details.
 
 ✅ Expected: "Your card number is invalid" warning appears.
 
-✅ Actual:
+✅ Actual: When a fake card number was entered, the system correctly blocked the payment and displayed the warning message "Your card number is invalid."
 
 ### **4️⃣ US_304 - Successful payment with valid card**
 📌 As a customer, I want to complete the payment with valid card details so I can receive confirmation of a successful purchase.
 
 ✅ Expected: "Your order has been confirmed. Thank you!" is displayed.
 
-✅ Actual:
+✅ Actual: The payment was completed successfully with valid card details, and the message "Your order has been confirmed. Thank you!" was displayed.
 
 ### **5️⃣ US_305 - Can user download the eBook?**
 📌 As a customer, I want to be able to download the eBook immediately after a successful purchase.
 
 ✅ Expected: File download starts and matches the purchased content.
 
-✅ Actual:
+✅ Actual: The eBook download started immediately after the successful purchase and matched the purchased content.
 
 ### **6️⃣ US_306 - Submit contact form**
 📌 As a customer, I want to send a message through the contact form to get support, and if CAPTCHA is not verified, I should be warned.
@@ -120,7 +120,7 @@ EJunkieProject/
 
 ✅ Expected: Video plays and closes after 10 seconds.
 
-✅ Actual:
+✅ Actual: The video started playing successfully, continued for 10 seconds, and closed as expected without any issues.
 
 ---
 
@@ -152,19 +152,26 @@ EJunkieProject/
 | **Git / GitHub**        | Version control                        |
 
 ---
+## 📚 Required Libraries
 
+To ensure the project runs correctly, the following libraries must be added to the project:
+
+- Selenium
+- TestNG
+- Apache Commons IO
+- SLF4J NOP
+
+---
 ## 👨‍💻 Project Team
 
-| Name                | Role                                | User Story |
-|---------------------|--------------------------------------|------------|
-| **Yiğit Çam**        | Project Lead - QA Automation Eng.   | US_301     |
-| **Zafer Ataklı**     | QA Automation Engineer              | US_306     |
-| **Tuğba Kılıç**       | QA Automation Engineer              | US_307     |
-| **Rıfat Batır**       | QA Automation Engineer              | US_304     |
-| **Nuri Öztürk**       | QA Automation Engineer              | US_308     |
-| **Azim Korkmaz**      | QA Automation Engineer              | US_303     |
-| **Sibel Öztemel**     | QA Automation Engineer              | US_305     |
-| **Mert Can Özdemir**  | QA Automation Engineer              | US_302     |
+| Name                | Role                                | User Story     |
+|---------------------|--------------------------------------|----------------|
+| **Yiğit Çam**        | Project Lead - QA Automation Eng.   | US_301         |
+| **Zafer Ataklı**     | QA Automation Engineer              | US_306, US_307 |
+| **Rıfat Batır**       | QA Automation Engineer              | US_304,US_305  |
+| **Nuri Öztürk**       | QA Automation Engineer              | US_308         |
+| **Azim Korkmaz**      | QA Automation Engineer              | US_303         |
+| **Mert Can Özdemir**  | QA Automation Engineer              | US_302         |
 
 > Note: This is a collaborative QA training project.
 
@@ -179,12 +186,10 @@ EJunkieProject/
 ## 👨‍💻 Project Team GitHub
 
 - **[Zafer Ataklı](https://github.com/zaferatakli)**
-- **[Tuğba Kılıç](https://github.com/TugbaKilic33)**
 - **[Yiğit Çam](https://github.com/Yigit-Cam)**
 - **[Rıfat Batır](https://github.com/rftbtr)**
 - **[Azim Korkmaz](https://github.com/AzimKorkmaz)**
 - **[Nuri Öztürk](https://github.com/NuriOzturk)**
-- **[Sibel Öztemel](https://github.com/Sibel52)**
 - **[Mert Can Özdemir](https://github.com/lioncarnes)**
 
 ---

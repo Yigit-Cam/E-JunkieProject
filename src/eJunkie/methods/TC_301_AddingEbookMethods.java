@@ -24,9 +24,11 @@ public class TC_301_AddingEbookMethods {
         String code = "1234b";
 
         elements.eBook.click();
+
         driver.switchTo().frame(elements.yourCardIframe);
-        Assert.assertTrue(elements.meesage.isDisplayed(), "No visible");
+        Assert.assertTrue(elements.message.isDisplayed(), "No visible");
         elements.promoCode.click();
+
         elements.promoCodeField.sendKeys(code + Keys.ENTER);
         Assert.assertTrue(elements.invalidCode.isDisplayed(), "No visible");
     }

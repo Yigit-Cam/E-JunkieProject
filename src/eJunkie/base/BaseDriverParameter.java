@@ -17,23 +17,26 @@ public class BaseDriverParameter {
     @BeforeClass
     @Parameters("BrowserType")
     public void Setup(String browserType){
-        CloseFaultyWindows();
-        CloseFaultyForMac();
+        /// the following methods are only added for Mac and Windows to switch off failed drivers.
+        /// they are placed in the comment line to avoid switching off drivers in cross browser tests.
+        // CloseFaultyWindows();
+        // CloseFaultyForMac();
 
         switch (browserType.toLowerCase()) {
             case "edge":
                 driver = new EdgeDriver();
                 break;
+            case "chrome":
             default:
                 driver = new ChromeDriver();
         }
 
         driver.manage().window().maximize();
-        driver.get("https://shopdemo.fatfreeshop.com/");
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(120));
         action = new Actions(driver);
+        driver.get("https://shopdemo.fatfreeshop.com/");
     }
 
     @AfterClass
