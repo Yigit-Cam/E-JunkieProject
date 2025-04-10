@@ -10,10 +10,7 @@ public class TC_303_FailedPaymentCheckTest extends BaseDriverParameter {
     @Test()
     @Parameters("BrowserType")
     public void FailedPaymentCheck() {
-        TC_303_FailedPaymentCheckMethods methods=new TC_303_FailedPaymentCheckMethods(driver,wait);
+        TC_303_FailedPaymentCheckMethods methods = new TC_303_FailedPaymentCheckMethods(driver, wait);
         methods.failedPaymentCheck();
-
     }
-
-
 }
