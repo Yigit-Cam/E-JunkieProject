@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class TC_301_AddingEbookElements {
+
     public TC_301_AddingEbookElements(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
@@ -14,7 +15,7 @@ public class TC_301_AddingEbookElements {
     @FindBy(xpath = "//iframe[@class='EJIframeV3 EJOverlayV3']")
     public WebElement yourCardIframe;
     @FindBy(xpath = "//*[text()='Proceed To Pay']")
-    public WebElement meesage;
+    public WebElement message;
     @FindBy(xpath = "//*[text()='Add Promo Code']")
     public WebElement promoCode;
     @FindBy(xpath = "//*[@class='Promo-Code-Value']")

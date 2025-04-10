@@ -6,12 +6,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.FindBy;
 
 public class TC_304_PaymentCCElements {
+
     public TC_304_PaymentCCElements(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
     @FindBy(xpath = "(//div[@class='basicDetails']/button)[2]")
-    public WebElement demoeBook;
+    public WebElement demoEbook;
 
     @FindBy(xpath = "//iframe[@class='EJIframeV3 EJOverlayV3']")
     public WebElement yourCardIframe;
@@ -44,7 +45,7 @@ public class TC_304_PaymentCCElements {
     public WebElement cardIframe;
 
     @FindBy(name = "cardnumber")
-    public WebElement cardnumberField;
+    public WebElement cardNumberField;
 
     @FindBy(name = "exp-date")
     public WebElement expDateField;
@@ -56,6 +57,5 @@ public class TC_304_PaymentCCElements {
     public WebElement payButton;
 
     @FindBy(xpath = "//p[@class='confirme_text']")
-    public WebElement confirmeText;
-
+    public WebElement confirmText;
 }
