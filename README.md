@@ -72,7 +72,7 @@ EJunkieProject/
 
 ✅ Actual: After adding the eBook to the basket and entering an invalid promo code, the system displayed the warning message "Invalid promo code" upon clicking “Apply.”
 
-<img src="tests_gif/US301_EJunkieAddingEbook.gif" alt="US306_EJunkie_ContactUs" width="800" height="500"/>
+<img src="tests_gif/US301_EJunkieAddingEbook.gif" alt="US301_EJunkieAddingEbook.gif" width="800" height="500"/>
 
 ### **2️⃣ US_302 - Payment attempt with missing information**
 📌 As a customer, I want to attempt payment without entering required fields like email or billing name, so I can confirm that the form validations are triggered.
@@ -81,12 +81,16 @@ EJunkieProject/
 
 ✅ Actual: When the required fields like email and billing name were left empty, the system triggered the form validations and displayed the error messages "Invalid email" and "Invalid billing name."
 
+<img src="tests_gif/US302_DebitCardFaultyPayment.gif" alt="US302_DebitCardFaultyPayment.gif" width="800" height="500"/>
+
 ### **3️⃣ US_303 - Invalid card number payment attempt**
 📌 As a customer, I want to enter a fake card number during payment so I can verify that the system blocks invalid card details.
 
 ✅ Expected: "Your card number is invalid" warning appears.
 
 ✅ Actual: When a fake card number was entered, the system correctly blocked the payment and displayed the warning message "Your card number is invalid."
+
+<img src="tests_gif/US303_DebitCardFaultyPayment.gif" alt="US303_DebitCardFaultyPayment.gif" width="800" height="500"/>
 
 ### **4️⃣ US_304 - Successful payment with valid card**
 📌 As a customer, I want to complete the payment with valid card details so I can receive confirmation of a successful purchase.
@@ -95,7 +99,7 @@ EJunkieProject/
 
 ✅ Actual: The payment was completed successfully with valid card details, and the message "Your order has been confirmed. Thank you!" was displayed.
 
-<img src="tests_gif/US304_PaymentCC.gif" alt="US306_EJunkie_ContactUs" width="800" height="500"/>
+<img src="tests_gif/US304_PaymentCC.gif" alt="US304_PaymentCC.gif" width="800" height="500"/>
 
 ### **5️⃣ US_305 - Can user download the eBook?**
 📌 As a customer, I want to be able to download the eBook immediately after a successful purchase.
@@ -104,7 +108,7 @@ EJunkieProject/
 
 ✅ Actual: The eBook download started immediately after the successful purchase and matched the purchased content.
 
-<img src="tests_gif/US305_PaymentProcessApprovalDownload.gif" alt="US306_EJunkie_ContactUs" width="800" height="500"/>
+<img src="tests_gif/US305_PaymentProcessApprovalDownload.gif" alt="US305_PaymentProcessApprovalDownload.gif" width="800" height="500"/>
 
 ### **6️⃣ US_306 - Submit contact form**
 📌 As a customer, I want to send a message through the contact form to get support, and if CAPTCHA is not verified, I should be warned.
