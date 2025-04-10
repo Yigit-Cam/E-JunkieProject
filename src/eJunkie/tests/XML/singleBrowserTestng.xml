@@ -7,6 +7,7 @@
         <parameter name="BrowserType" value="chrome"/>
         <classes>
             <class name="eJunkie.tests.TC_301_AddingEbookTest"/>
+            <class name="eJunkie.tests.TC_302_DebitCardFaultyPaymentTest"/>
             <class name="eJunkie.tests.TC_304_PaymentCCTest"/>
             <class name="eJunkie.tests.TC_306_ContactUsTest"/>
             <class name="eJunkie.tests.TC_307_AccessToEJunkieHomePageTest"/>
