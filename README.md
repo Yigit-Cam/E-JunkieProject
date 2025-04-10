@@ -90,12 +90,16 @@ EJunkieProject/
 
 ✅ Actual: The payment was completed successfully with valid card details, and the message "Your order has been confirmed. Thank you!" was displayed.
 
+<img src="tests_gif/US304_PaymentCC.gif" alt="US306_EJunkie_ContactUs" width="800" height="500"/>
+
 ### **5️⃣ US_305 - Can user download the eBook?**
 📌 As a customer, I want to be able to download the eBook immediately after a successful purchase.
 
 ✅ Expected: File download starts and matches the purchased content.
 
 ✅ Actual: The eBook download started immediately after the successful purchase and matched the purchased content.
+
+<img src="tests_gif/US305_PaymentProcessApprovalDownload.gif" alt="US306_EJunkie_ContactUs" width="800" height="500"/>
 
 ### **6️⃣ US_306 - Submit contact form**
 📌 As a customer, I want to send a message through the contact form to get support, and if CAPTCHA is not verified, I should be warned.
