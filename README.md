@@ -46,6 +46,8 @@ EJunkieProject/
 │       │   └─XML/            # TestNG configuration files
 │       └── utility/          # Helper classes (MyFunc, etc.)
 │
+├── tests_gif/                # Test GIFs
+│ 
 └── README.md                 # Project documentation
 
 ```
@@ -57,6 +59,7 @@ EJunkieProject/
 - **src/eJunkie/tests/**: Contains TestNG test scenarios.
 - **src/eJunkie/tests/XML/**: Contains TestNG configuration files.
 - **src/eJunkie/utility/**: Contains helper classes like `MyFunc`, etc.
+- **tests_gif/**: Contains GIFs demonstrating test scenarios.
 - **README.md**: Contains project documentation.
 ---
 
@@ -104,7 +107,7 @@ EJunkieProject/
 
 ✅ Actual: "Recaptcha did not match" error message appeared.
 
-<img src="tests_gif/US306_EJunkieContactUs.gif" alt="US306_EJunkie_ContactUs" width="800" height="500"/>
+<img src="tests_gif/US306_EJunkieContactUs.gif" alt="US306_EJunkie_ContactUs.gif" width="800" height="500"/>
 
 ### **7️⃣ US_307 - Access main e-junkie page**
 📌 As a customer, I want to navigate from the demo site to the official e-junkie homepage to verify the redirection works correctly.
@@ -121,6 +124,8 @@ EJunkieProject/
 ✅ Expected: Video plays and closes after 10 seconds.
 
 ✅ Actual: The video started playing successfully, continued for 10 seconds, and closed as expected without any issues.
+
+<img src="tests_gif/US308_EJunkieInformationVideo.gif" alt="US308_EJunkieInformationVideo.gif" width="800" height="500"/>
 
 ---
 
