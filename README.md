@@ -69,6 +69,8 @@ EJunkieProject/
 
 ✅ Actual: After adding the eBook to the basket and entering an invalid promo code, the system displayed the warning message "Invalid promo code" upon clicking “Apply.”
 
+<img src="tests_gif/US301_EJunkieAddingEbook.gif" alt="US306_EJunkie_ContactUs" width="800" height="500"/>
+
 ### **2️⃣ US_302 - Payment attempt with missing information**
 📌 As a customer, I want to attempt payment without entering required fields like email or billing name, so I can confirm that the form validations are triggered.
 
