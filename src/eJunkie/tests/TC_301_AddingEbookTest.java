@@ -8,8 +8,8 @@ public class TC_301_AddingEbookTest extends BaseDriverParameter {
 
     @Test()
     @Parameters("BrowserType")
-    public void AddingEbookTest(){
-        TC_301_AddingEbookMethods methods=new TC_301_AddingEbookMethods(driver,action,wait);
+    public void AddingEbookTest() {
+        TC_301_AddingEbookMethods methods = new TC_301_AddingEbookMethods(driver, action, wait);
         methods.addEbook();
     }
 }

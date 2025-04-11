@@ -17,10 +17,6 @@ public class BaseDriverParameter {
     @BeforeClass
     @Parameters("BrowserType")
     public void Setup(String browserType){
-        /// the following methods are only added for Mac and Windows to switch off failed drivers.
-        /// they are placed in the comment line to avoid switching off drivers in cross browser tests.
-        // CloseFaultyWindows();
-        // CloseFaultyForMac();
 
         switch (browserType.toLowerCase()) {
             case "edge":
@@ -34,7 +30,7 @@ public class BaseDriverParameter {
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        wait = new WebDriverWait(driver, Duration.ofSeconds(120));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(140)); // The time was kept long in order to pass the captcha verifications manually.
         action = new Actions(driver);
         driver.get("https://shopdemo.fatfreeshop.com/");
     }
@@ -43,22 +39,5 @@ public class BaseDriverParameter {
     public void TearDown() {
         MyFunc.Sleep(5);
         driver.quit();
-    }
-
-    public void CloseFaultyForMac() {
-        try {
-            Process process = Runtime.getRuntime().exec(new String[]{"/bin/bash", "-c", "pgrep -P $(pgrep chromedriver) | xargs kill -9"});
-            process.waitFor();
-            process = Runtime.getRuntime().exec(new String[]{"/bin/bash", "-c", "pgrep chromedriver | xargs kill -9"});
-            process.waitFor();
-        } catch (Exception ignored) {
-        }
-    }
-
-    public void CloseFaultyWindows() {
-        try {
-            Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe /T");
-        } catch (Exception ignored) {
-        }
     }
 }

@@ -37,18 +37,19 @@ Tests are executed via the `testng.xml` configuration file.
 EJunkieProject/
 │
 ├── src/
-│   └── eJunkie/
-│       │ 
-│       ├── base/             # BaseDriver and core structure
-│       ├── elements/         # Page Object classes (POM)
-│       ├── methods/          # User actions
-│       ├── tests/            # TestNG test scenarios
-│       │   └─XML/            # TestNG configuration files
-│       └── utility/          # Helper classes (MyFunc, etc.)
+│   ├── eJunkie/
+│   │    │ 
+│   │    ├── base/             # BaseDriver and core structure
+│   │    ├── elements/         # Page Object classes (POM)
+│   │    ├── methods/          # User actions
+│   │    └── tests/            # TestNG test scenarios
+│   │        └─XML/            # TestNG configuration files
+│   │
+│   └── utility/               # Helper classes (MyFunc, etc.)
 │
-├── tests_gif/                # Test GIFs
+├── tests_gif/                 # Test GIFs
 │ 
-└── README.md                 # Project documentation
+└── README.md                  # Project documentation
 
 ```
 ---
@@ -72,7 +73,7 @@ EJunkieProject/
 
 ✅ Actual: After adding the eBook to the basket and entering an invalid promo code, the system displayed the warning message "Invalid promo code" upon clicking “Apply.”
 
-<img src="tests_gif/US301_EJunkieAddingEbook.gif" alt="US301_EJunkieAddingEbook.gif" width="800" height="500"/>
+<img src="tests_gif/US301.gif" alt="US301_EJunkieAddingEbook.gif" width="800" height="500"/>
 
 ### **2️⃣ US_302 - Payment attempt with missing information**
 📌 As a customer, I want to attempt payment without entering required fields like email or billing name, so I can confirm that the form validations are triggered.
@@ -81,7 +82,7 @@ EJunkieProject/
 
 ✅ Actual: When the required fields like email and billing name were left empty, the system triggered the form validations and displayed the error messages "Invalid email" and "Invalid billing name."
 
-<img src="tests_gif/US302_DebitCardFaultyPayment.gif" alt="US302_DebitCardFaultyPayment.gif" width="800" height="500"/>
+<img src="tests_gif/US302.gif" alt="US302_DebitCardFaultyPayment.gif" width="800" height="500"/>
 
 ### **3️⃣ US_303 - Invalid card number payment attempt**
 📌 As a customer, I want to enter a fake card number during payment so I can verify that the system blocks invalid card details.
@@ -90,7 +91,7 @@ EJunkieProject/
 
 ✅ Actual: When a fake card number was entered, the system correctly blocked the payment and displayed the warning message "Your card number is invalid."
 
-<img src="tests_gif/US303_DebitCardFaultyPayment.gif" alt="US303_DebitCardFaultyPayment.gif" width="800" height="500"/>
+<img src="tests_gif/US303.gif" alt="US303_FailedPaymentCheck.gif" width="800" height="500"/>
 
 ### **4️⃣ US_304 - Successful payment with valid card**
 📌 As a customer, I want to complete the payment with valid card details so I can receive confirmation of a successful purchase.
@@ -99,7 +100,7 @@ EJunkieProject/
 
 ✅ Actual: The payment was completed successfully with valid card details, and the message "Your order has been confirmed. Thank you!" was displayed.
 
-<img src="tests_gif/US304_PaymentCC.gif" alt="US304_PaymentCC.gif" width="800" height="500"/>
+<img src="tests_gif/US304.gif" alt="US304_PaymentCC.gif" width="800" height="500"/>
 
 ### **5️⃣ US_305 - Can user download the eBook?**
 📌 As a customer, I want to be able to download the eBook immediately after a successful purchase.
@@ -108,7 +109,7 @@ EJunkieProject/
 
 ✅ Actual: The eBook download started immediately after the successful purchase and matched the purchased content.
 
-<img src="tests_gif/US305_PaymentProcessApprovalDownload.gif" alt="US305_PaymentProcessApprovalDownload.gif" width="800" height="500"/>
+<img src="tests_gif/US305.gif" alt="US305_PaymentProcessApprovalDownload.gif" width="800" height="500"/>
 
 ### **6️⃣ US_306 - Submit contact form**
 📌 As a customer, I want to send a message through the contact form to get support, and if CAPTCHA is not verified, I should be warned.
@@ -117,7 +118,7 @@ EJunkieProject/
 
 ✅ Actual: "Recaptcha did not match" error message appeared.
 
-<img src="tests_gif/US306_EJunkieContactUs.gif" alt="US306_EJunkie_ContactUs.gif" width="800" height="500"/>
+<img src="tests_gif/US306.gif" alt="US306_EJunkie_ContactUs.gif" width="800" height="500"/>
 
 ### **7️⃣ US_307 - Access main e-junkie page**
 📌 As a customer, I want to navigate from the demo site to the official e-junkie homepage to verify the redirection works correctly.
@@ -126,31 +127,31 @@ EJunkieProject/
 
 ✅ Actual: Final URL matched e-junkie.com.
 
-<img src="tests_gif/US307_EJunkieLogo.gif" alt="US307_EJunkie_Logo.gif" width="800" height="500"/>
+<img src="tests_gif/US307.gif" alt="US307_EJunkie_Logo.gif" width="800" height="500"/>
 
-### **8️⃣ US_308 - Access promotional video**
-📌 As a customer, I want to play the promotional video and ensure it starts, plays for 10 seconds, and closes properly.
+### **8️⃣ US_308 - Access 'How it works' video**
+📌 As a customer, I want to play the 'How it works' video and ensure it starts, plays for 10 seconds, and closes properly.
 
 ✅ Expected: Video plays and closes after 10 seconds.
 
 ✅ Actual: The video started playing successfully, continued for 10 seconds, and closed as expected without any issues.
 
-<img src="tests_gif/US308_EJunkieInformationVideo.gif" alt="US308_EJunkieInformationVideo.gif" width="800" height="500"/>
+<img src="tests_gif/US308.gif" alt="US308_EJunkieInformationVideo.gif" width="800" height="500"/>
 
 ---
 
 ## 📊 **Test Coverage Table**
 
-| Test Scenario                        | Status     | Priority |
-|-------------------------------------|------------|----------|
-| Invalid Promo Code                  | ✅ Passed  | Medium   |
-| Missing Required Fields             | ✅ Passed  | High     |
-| Invalid Card                        | ✅ Passed  | High   |
-| Valid Payment                       | ✅ Passed  | High     |
-| eBook Download                      | ✅ Passed  | High   |
-| CAPTCHA Error                       | ✅ Passed  | Medium      |
-| Homepage Redirect                   | ✅ Passed  | Low   |
-| Video Playback                      | ✅ Passed  | Low      |
+| Test Scenario                                   | Status     | Priority |
+|-------------------------------------------------|------------|----------|
+| Add eBook to cart & invalid promo code          | ✅ Passed  | Medium   |
+| Payment attempt with missing information        | ✅ Passed  | High     |
+| Invalid card number payment attempt             | ✅ Passed  | High   |
+| Successful payment with valid card              | ✅ Passed  | High     |
+| Can user download the eBook                     | ✅ Passed  | High   |
+| Submit contact form                             | ✅ Passed  | Medium      |
+| Access main e-junkie page                       | ✅ Passed  | Low   |
+| Access 'How it works' video                     | ✅ Passed  | Low      |
 
 ---
 
@@ -162,7 +163,7 @@ EJunkieProject/
 | **Selenium WebDriver**  | Web automation framework               |
 | **TestNG**              | Testing framework                      |
 | **TestNG XML**          | Manages test configurations and groups |
-| **Maven**               | Build and dependency manager           |
+| **Maven**               | Dependency management and compilation operations in the project        |
 | **Page Object Model**   | Reusable and maintainable test design  |
 | **Git / GitHub**        | Version control                        |
 

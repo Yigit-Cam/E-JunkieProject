@@ -1,6 +1,6 @@
 package eJunkie.methods;
 
-import eJunkie.elements.TC_306_ContactUsElements;
+import eJunkie.elements.ProjectAllElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,7 +11,7 @@ public class TC_306_ContactUsMethods {
     WebDriver driver;
     Actions action;
     WebDriverWait wait;
-    TC_306_ContactUsElements elements;
+    ProjectAllElements elements;
 
     public TC_306_ContactUsMethods(WebDriver driver, Actions action, WebDriverWait wait) {
         this.driver = driver;
@@ -20,7 +20,7 @@ public class TC_306_ContactUsMethods {
     }
 
     public void sendMessage() {
-        elements = new TC_306_ContactUsElements(driver);
+        elements = new ProjectAllElements(driver);
         String name = "Bug Fathers";
         String email = "cigeyab754@erapk.com";
         String subject = "Test Subject";
@@ -37,7 +37,7 @@ public class TC_306_ContactUsMethods {
         Assert.assertEquals(driver.getCurrentUrl(), contactUsUrl, "URL is not correct");
 
         wait.until(ExpectedConditions.visibilityOf(elements.nameField)).sendKeys(name);
-        wait.until(ExpectedConditions.visibilityOf(elements.emailField)).sendKeys(email);
+        wait.until(ExpectedConditions.visibilityOf(elements.emailFieldContactUs)).sendKeys(email);
         wait.until(ExpectedConditions.visibilityOf(elements.subjectField)).sendKeys(subject);
         wait.until(ExpectedConditions.visibilityOf(elements.messageField)).sendKeys(message);
         wait.until(ExpectedConditions.elementToBeClickable(elements.sendMessageButton)).click();

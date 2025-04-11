@@ -1,15 +1,16 @@
 package eJunkie.methods;
 
-import eJunkie.elements.TC_303_FailedPaymentCheckElements;
+import eJunkie.elements.ProjectAllElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class TC_303_FailedPaymentCheckMethods {
 
     WebDriver driver;
     WebDriverWait wait;
-    TC_303_FailedPaymentCheckElements elements;
+    ProjectAllElements elements;
 
     public TC_303_FailedPaymentCheckMethods(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
@@ -17,15 +18,14 @@ public class TC_303_FailedPaymentCheckMethods {
     }
 
     public void failedPaymentCheck() {
-        elements = new TC_303_FailedPaymentCheckElements(driver);
-
+        elements = new ProjectAllElements(driver);
         String name = " Bruce Wayne";
         String email = "ejunkieshop@gmail.com";
         String creditCardNum = "1111111111111111";
         String expirationDate = "1111";
         String cvc = "111";
 
-        elements.demoEBook.click();
+        elements.demoEBookAddToCart.click();
 
         driver.switchTo().frame(elements.yourCardIframe);
 
@@ -58,5 +58,10 @@ public class TC_303_FailedPaymentCheckMethods {
 
         driver.switchTo().defaultContent();
         driver.switchTo().frame(elements.yourCardIframe);
+
+        wait.until(ExpectedConditions.visibilityOf(elements.payButton)).click();
+
+        wait.until(ExpectedConditions.visibilityOf(elements.errorText));
+        Assert.assertTrue(elements.errorText.isDisplayed(), "Error message is not displayed");
     }
 }
