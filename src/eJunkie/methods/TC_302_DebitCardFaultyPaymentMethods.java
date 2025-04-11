@@ -1,48 +1,45 @@
 package eJunkie.methods;
 
-import eJunkie.elements.TC_302_DebitCardFaultyPaymentElements;
+import eJunkie.elements.ProjectAllElements;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class TC_302_DebitCardFaultyPaymentMethods {
-
     WebDriver driver;
-    Actions actionn;
+    Actions action;
     WebDriverWait wait;
-    TC_302_DebitCardFaultyPaymentElements elements;
+    ProjectAllElements elements;
 
-    public TC_302_DebitCardFaultyPaymentMethods(WebDriver driver, Actions actionn, WebDriverWait wait) {
+    public TC_302_DebitCardFaultyPaymentMethods(WebDriver driver, Actions action, WebDriverWait wait) {
         this.driver = driver;
-        this.actionn = actionn;
+        this.action = action;
         this.wait = wait;
     }
 
     public void faultyPayment() {
-        elements = new TC_302_DebitCardFaultyPaymentElements(driver);
-        //String expectedUrl = "https://shopdemo.fatfreeshop.com/";
-        //String faultyPaymentUrl = "https://shopdemo.fatfreeshop.com/checkout";
+        elements = new ProjectAllElements(driver);
 
-        elements.eBook.click();
-
+        elements.demoEBookAddToCart.click();
 
         driver.switchTo().frame(elements.yourCardIframe);
 
+        Assert.assertTrue(elements.message.isDisplayed(), "Proceed to Pay button not visible");
+        elements.creditCardButton.click();
 
-        Assert.assertTrue(elements.meesage.isDisplayed(), "Proceed to Pay button not visible");
+        wait.until(ExpectedConditions.visibilityOf(elements.emailField)).clear();
+        elements.nameOnCardField.clear();
+        elements.confirmEmailField.clear();
 
+        driver.switchTo().defaultContent();
+        driver.switchTo().frame(elements.yourCardIframe);
 
-        elements.emailField.clear();
-        elements.billingNameField.clear();
-        elements.promoCodeField.clear();
+        wait.until(ExpectedConditions.visibilityOf(elements.payButton)).click();
 
+        wait.until(ExpectedConditions.visibilityOf(elements.invalidMessage));
 
-        elements.payButton.click();
-
-
-        Assert.assertTrue(driver.getPageSource().contains("Invalid email"), "Invalid email message not displayed");
-        Assert.assertTrue(driver.getPageSource().contains("Invalid Billing Name"), "Invalid Billing Name message not displayed");
+        Assert.assertTrue(elements.invalidMessage.isDisplayed(), "Invalid message not displayed");
     }
 }

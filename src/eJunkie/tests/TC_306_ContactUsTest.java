@@ -8,7 +8,7 @@ public class TC_306_ContactUsTest extends BaseDriverParameter {
 
     @Test()
     @Parameters("BrowserType")
-    public void ContactUsTest(){
+    public void ContactUsTest() {
         TC_306_ContactUsMethods methods = new TC_306_ContactUsMethods(driver, action, wait);
         methods.sendMessage();
     }

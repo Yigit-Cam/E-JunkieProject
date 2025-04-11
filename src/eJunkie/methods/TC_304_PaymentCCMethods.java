@@ -1,6 +1,6 @@
 package eJunkie.methods;
 
-import eJunkie.elements.TC_304_PaymentCCElements;
+import eJunkie.elements.ProjectAllElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,7 +11,7 @@ public class TC_304_PaymentCCMethods {
     WebDriver driver;
     Actions action;
     WebDriverWait wait;
-    TC_304_PaymentCCElements elements;
+    ProjectAllElements elements;
 
     public TC_304_PaymentCCMethods(WebDriver driver, Actions action, WebDriverWait wait) {
         this.driver = driver;
@@ -20,15 +20,15 @@ public class TC_304_PaymentCCMethods {
     }
 
     public void payment() {
-        elements = new TC_304_PaymentCCElements(driver);
+        elements = new ProjectAllElements(driver);
         String name = "RFT TEST";
         String email = "rfttest123@test.com";
         String creditCardNum = "4242424242424242";
         String expirationDate = "1225";
         String cvc = "000";
 
-        wait.until(ExpectedConditions.visibilityOf(elements.demoEbook));
-        elements.demoEbook.click();
+        wait.until(ExpectedConditions.visibilityOf(elements.demoEBookAddToCart));
+        elements.demoEBookAddToCart.click();
 
         driver.switchTo().frame(elements.yourCardIframe);
 

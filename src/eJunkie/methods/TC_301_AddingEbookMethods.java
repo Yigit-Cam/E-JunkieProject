@@ -1,6 +1,6 @@
 package eJunkie.methods;
 
-import eJunkie.elements.TC_301_AddingEbookElements;
+import eJunkie.elements.ProjectAllElements;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -11,7 +11,7 @@ public class TC_301_AddingEbookMethods {
     WebDriver driver;
     Actions action;
     WebDriverWait wait;
-    TC_301_AddingEbookElements elements;
+    ProjectAllElements elements;
 
     public TC_301_AddingEbookMethods(WebDriver driver, Actions action, WebDriverWait wait) {
         this.driver = driver;
@@ -20,10 +20,10 @@ public class TC_301_AddingEbookMethods {
     }
 
     public void addEbook() {
-        elements = new TC_301_AddingEbookElements(driver);
+        elements = new ProjectAllElements(driver);
         String code = "1234b";
 
-        elements.eBook.click();
+        elements.demoEBookAddToCart.click();
 
         driver.switchTo().frame(elements.yourCardIframe);
         Assert.assertTrue(elements.message.isDisplayed(), "No visible");

@@ -1,7 +1,6 @@
 package eJunkie.methods;
 
-import Utility.MyFunc;
-import eJunkie.elements.TC_305_PaymentProcessApprovalDownloadElements;
+import eJunkie.elements.ProjectAllElements;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,7 +11,7 @@ public class TC_305_PaymentProcessApprovalDownloadMethods {
     WebDriver driver;
     Actions action;
     WebDriverWait wait;
-    TC_305_PaymentProcessApprovalDownloadElements elements;
+    ProjectAllElements elements;
 
     public TC_305_PaymentProcessApprovalDownloadMethods(WebDriver driver, Actions action, WebDriverWait wait) {
         this.driver = driver;
@@ -21,7 +20,7 @@ public class TC_305_PaymentProcessApprovalDownloadMethods {
     }
 
     public void payment() {
-        elements = new TC_305_PaymentProcessApprovalDownloadElements(driver);
+        elements = new ProjectAllElements(driver);
         String name = "RFT TEST";
         String email = "rfttest123@test.com";
         String creditCardNum = "4242424242424242";
@@ -30,7 +29,7 @@ public class TC_305_PaymentProcessApprovalDownloadMethods {
 
         wait.until(ExpectedConditions.visibilityOf(elements.eBookPrice));
         String expectedBookPrice = elements.eBookPrice.getText().replaceAll("[^0-9.,]", "");
-        elements.demoeBook.click();
+        elements.demoEBookAddToCart.click();
 
         driver.switchTo().frame(elements.yourCardIframe);
         elements.creditCardButton.click();
@@ -46,7 +45,7 @@ public class TC_305_PaymentProcessApprovalDownloadMethods {
         elements.nameOnCardField.sendKeys(name);
 
         driver.switchTo().frame(elements.cardIframe);
-        elements.cardnumberField.sendKeys(creditCardNum);
+        elements.cardNumberField.sendKeys(creditCardNum);
         elements.expDateField.sendKeys(expirationDate);
         elements.cvcField.sendKeys(CVC);
 
@@ -55,11 +54,11 @@ public class TC_305_PaymentProcessApprovalDownloadMethods {
         elements.payButton.click();
 
         driver.switchTo().defaultContent();
-        wait.until(ExpectedConditions.visibilityOf(elements.confirmeText));
-        Assert.assertEquals(elements.confirmeText.getText(), "RFT, your order is confirmed. Thank you!");
+        wait.until(ExpectedConditions.visibilityOf(elements.confirmText));
+        Assert.assertEquals(elements.confirmText.getText(), "RFT, your order is confirmed. Thank you!");
 
         String eBookPrice = elements.lastEBookPrice.getText().replaceAll("[^0-9.,]", "");
-        Assert.assertEquals(eBookPrice,expectedBookPrice,"The first price and the last price are different.");
+        Assert.assertEquals(eBookPrice, expectedBookPrice, "The first price and the last price are different.");
 
         elements.downloadBtn.click();
     }

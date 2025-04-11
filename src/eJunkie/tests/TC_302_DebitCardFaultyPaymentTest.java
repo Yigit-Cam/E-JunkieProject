@@ -7,9 +7,9 @@ import org.testng.annotations.Test;
 
 public class TC_302_DebitCardFaultyPaymentTest extends BaseDriverParameter {
 
-    @Test()
+    @Test
     @Parameters("BrowserType")
-    public void faultyPaymentTest() {
+    public void faultyPaymentTest(){
         TC_302_DebitCardFaultyPaymentMethods methods = new TC_302_DebitCardFaultyPaymentMethods(driver, action, wait);
         methods.faultyPayment();
     }

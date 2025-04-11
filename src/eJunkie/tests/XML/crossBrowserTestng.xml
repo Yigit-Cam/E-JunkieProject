@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-
 <suite name="CrossBrowserSuite" parallel="tests" thread-count="2">
-
     <test name="ChromeTests">
         <parameter name="BrowserType" value="chrome"/>
         <classes>
@@ -31,5 +29,4 @@
             <class name="eJunkie.tests.TC_308_InformationVideoTest"/>
         </classes>
     </test>
-
 </suite>
